@@ -1,0 +1,25 @@
+<div class="lg:py-12 py-5 bg-gray-200">
+  <div class="container mx-auto px-4 flex flex-wrap lg:flex-nowrap gap-4">
+    <div class="">
+      {% include 'includes/detail_card.html' %} 
+      {% include 'includes/like.html' %}
+      {% include 'includes/comment.html' %} 
+      {% if form %}
+        {% include 'includes/comment_form.html' %}
+      {% endif %}  
+      {% if request.user.is_anonymous %}
+      <div class="mt-3 text-center">
+        <p class="text-gray-500">Please<span class="font-semibold text-green-500"> <a href="{% url 'signin' %}" class="">Login</a></span> to comment</p>
+      </div>
+      {% endif %}
+    </div>
+    <div class="lg:w-3/12 w-full lg:t-0 mt-4 lg:mt-0">
+        {% include 'includes/social.html' %}
+        {% include 'includes/category.html' with margin=True %}
+        {% include 'includes/popular_posts.html' %}
+        {% include 'includes/tags.html' %}
+    </div>
+  </div>
+</div>
+{% include "includes/mobile_menu.html" %}
+{% include "includes/footer.html" %}

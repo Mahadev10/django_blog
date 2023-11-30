@@ -1,0 +1,15 @@
+{% load static %}
+{% for comment in comments%}
+<div class="space-y-5 mt-2">
+  <div class="flex items-center border-b pb-5 border-gray-300">
+    <div class="w-12 h-12 flex-shrink-0">
+      <img src= {% if comment.user.profile_photo %}"{{comment.user.profile_photo.url}}" {% else %} "{% static 'images/default_user.png' %}" {% endif %} alt="" class="w-full h-full object-fill rounded-full" />
+    </div>
+    <div class="flex-grow pl-4">
+      <h4 class="text-base font-roboto">{{comment.user}}</h4>
+      <p class="text-xs text-gray-400">{{comment.updated_at | date:"M,d Y"}}</p>
+      <p class="text-sm font-600 mt-1">{{comment.comment_text}}</p>
+    </div>
+  </div>
+</div>
+{% endfor %}

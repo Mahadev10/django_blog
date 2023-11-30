@@ -1,0 +1,27 @@
+<div class="bg-white shadow-sm shadow-white rounded-xl p-4 mt-6">
+  <h3 class="text-xl font-semibold text-gray-700 font-roboto">Popular Posts</h3>
+  {% for post in popular_posts %}
+  <div class="mt-4">
+    <a href="{% url 'post_detail' post.slug %}" class="flex group mt-4">
+      <div class="flex-shrink-0">
+        <img
+          src="{{post.image.url}}"
+          alt=""
+          class="w-20 rounded object-cover hover:brightness-110 h-full"
+        />
+      </div>
+      <div class="flex flex-col justify-center flex-grow pl-3">
+        <h5
+          class="text-sm leading-5 block font-roboto font-semibold transition group-hover:text-blue-700"
+        >
+          {{post.title}}
+        </h5>
+        <span class="text-gray-700 text-xs group-hover:text-blue-700"
+          ><i class="fas fa-clock mr-3"></i>{{post.updated_at|date:"M.d Y"}}</span
+        >
+      </div>
+    </a>
+  </div>
+  
+  {% endfor %}
+</div>

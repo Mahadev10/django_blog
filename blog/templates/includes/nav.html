@@ -1,0 +1,73 @@
+{% load static%}
+<nav class="bg-slate-300 shadow-sm shadow-slate-300">
+  <div class="container mx-auto py-2 flex items-center">
+    <a href="{% url 'home' %}" class="flex items-center">
+      <img
+        src="{% static 'images/programmer.png' %}"
+        class="w-[50px] inline-block"
+      />
+      <span class="font-bold text-xl lg:text-2xl ml-4">Maha[DEV]</span>
+    </a>
+    <div class="ml-12 lg:flex hidden space-x-3">
+      <a
+        href="{% url 'home' %}"
+        class="flex items-center font-semibold text-md hover:text-blue-700 transition-all"
+      >
+        <span class="mr-2"><i class="fas fa-home"></i></span>Home
+      </a>
+    </div>
+    <div class="ml-12 lg:flex hidden space-x-3">
+      <a
+        href="#"
+        class="flex items-center font-semibold text-md hover:text-blue-700 transition-all"
+      >
+        <span class="mr-2"><i class="fas fa-user"></i></span>About
+      </a>
+    </div>
+    <div class="relative ml-5 hidden lg:block">
+      <form action="{% url 'search_posts' %}" method="GET">
+        <button class="absolute left-3 top-2.5 text-sm text-gray-600" type="submit">
+          <span>
+            <i class="fas fa-search"></i>
+          </span>
+        </button>
+        <input
+        name="search_keyword"
+        type="text"
+        placeholder="search..."
+        autocomplete="off"
+        class="block w-full rounded-3xl pl-11 pr-2 py-2 focus:outline-none text-gray-600 shadow-sm shadow-slate-600"
+        />
+      </form>
+    </div>
+    <div class="lg:ml-3 ml-auto">
+      {% if request.user.is_authenticated %}
+      <a
+        href="{% url 'signout' %}"
+        class="flex items-center font-semibold text-md text-gray-900 hover:text-blue-700 transition"
+      >
+        <span class="mr-2">
+          <i class="fas fa-sign-out"></i>
+        </span>
+        Logout
+      </a>
+      {% else %}
+      <a
+        href="{% url 'signin' %}"
+        class="flex items-center font-semibold text-md text-gray-900 hover:text-blue-700 transition"
+      >
+        <span class="mr-2">
+          <i class="fas fa-lock"></i>
+        </span>
+        Login/Register
+      </a>
+      {% endif %}
+    </div>
+    <div
+      class="text-xl text-gray-700 cursor-pointer mx-4 lg:hidden block hover:text-blue-700 transition"
+      id="open_sidebar"
+    >
+      <i class="fas fa-bars"></i>
+    </div>
+  </div>
+</nav>

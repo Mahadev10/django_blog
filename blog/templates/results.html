@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title%}
+Maha[Dev] | Blog
+{% endblock%}
+{% block content %}
+{% include "includes/nav.html"%}
+{% include "result_main.html" with categories=categories posts=posts tags=tags result_msg=result_msg %}
+{% include "includes/mobile_menu.html" with categories=categories %}
+{% include "includes/footer.html" %}
+{% endblock %}

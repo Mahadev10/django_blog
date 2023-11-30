@@ -1,0 +1,23 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+django = "*"
+pillow = "*"
+django-cleanup = "*"
+python-decouple = "*"
+six = "*"
+whitenoise = "*"
+dj-database-url = "*"
+psycopg2-binary = "*"
+django-cloudinary-storage = "*"
+cloudinary = "*"
+gunicorn = "*"
+django-tinymce = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.11.5"

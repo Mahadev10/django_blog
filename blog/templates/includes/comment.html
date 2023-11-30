@@ -1,0 +1,7 @@
+<div class="p-4 bg-white rounded-sm shadow-sm mt-8">
+  <h4 class="text-base uppercase font-semibold font-roboto mb-4">
+    Post A Comment
+  </h4>
+  <p class="text-sm text-gray-500 mb-2">{{comments.count}} comment{{comments.count |pluralize:"s"}}</p>
+  {% include 'includes/comment_card.html' %}
+</div>

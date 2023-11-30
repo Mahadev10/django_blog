@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title%}
+Maha[Dev] | Blog
+{% endblock%}
+{% block content %}
+{% include "includes/nav.html"%}
+{% include "main.html" with categories=categories posts=posts tags=tags %}
+{% include "includes/mobile_menu.html" with categories=categories %}
+{% include "includes/footer.html" %}
+{% for message in messages  %}
+{% include 'includes/success_alert.html'%}
+<script src="{% static 'js/close.js' %}"></script>
+{% endfor %}
+{% endblock %}

@@ -1,0 +1,17 @@
+<div class="py-12 bg-gray-200">
+    <div class="mb-3 text-center w-full"><p class="text-2xl">{{result_msg.key}}: <span class="text-2xl underline decoration-solid text-blue-700">{{result_msg.msg}}</span></p></div>
+    <div class="container mx-auto px-4 flex flex-wrap lg:flex-nowrap">
+      <div class="w-3/12 hidden lg:block">
+          {% include "includes/category.html"%}
+        </div>
+       <div class="xl:w-9/12 lg:w-6/12 w-full lg:ml-6 lg:mr-6">
+          {% include 'includes/postcard.html' with posts=posts %}
+       </div>
+       <div class="lg:w-3/12 w-full lg:t-0 mt-4 lg:mt-0">
+         {% include 'includes/social.html' %}
+         {% include 'includes/popular_posts.html' %}
+         {% include 'includes/tags.html' %}
+       </div>
+      </div>
+  </div>
+  

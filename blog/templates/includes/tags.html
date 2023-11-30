@@ -1,0 +1,11 @@
+<div class="w-full bg-white text-gray-700 font-roboto mt-6 p-4 rounded-xl">
+  <h3 class="text-xl font-semibold text-gray-700 font-roboto p-2">Tags</h3>
+  <div class="flex flex-wrap gap-2 items-cenetr p-4">
+    {%for tag in tags%}
+    <a
+      href="{% url 'tag_posts' tag.name %}"
+      class="px-2 py-1 text-sm border border-gray-300 rounded-sm hover:bg-blue-500 transition hover:text-white"
+      >#{{tag.name}}</a>
+      {% endfor %}
+  </div>
+</div>
